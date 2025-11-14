@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  app-message-1:
+    image: app-message-one
+    ports:
+      - "8081:8081"
+    environment:
+      - PYTHONPATH=/code/app
+    # networks:
+    #   - my-app-network
+
+  app-message-2:
+    image: app-message-two
+    ports:
+      - "8080:8080"
+    environment:
+      - PYTHONPATH=/code/app
+      - PROTOCOL=http
+      - BASE_URL=app-message-1
+      - PORT=8081
+    # networks:
+    #   - my-app-network
+    depends_on:
+      - app-message-1
+
+  # networks:
+  #   my-app-network:
+  #     driver: bridge

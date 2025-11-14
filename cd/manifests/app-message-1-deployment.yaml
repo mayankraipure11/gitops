@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose --file ../docker-compose.yaml convert
+    kompose.version: 1.37.0 (HEAD)
+  labels:
+    io.kompose.service: app-message-1
+  name: app-message-1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: app-message-1
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose --file ../docker-compose.yaml convert
+        kompose.version: 1.37.0 (HEAD)
+      labels:
+        io.kompose.service: app-message-1
+    spec:
+      containers:
+        - env:
+            - name: PYTHONPATH
+              value: /code/app
+          image: mayankraipure/app-message-one
+          name: app-message-1
+          ports:
+            - containerPort: 8081
+              protocol: TCP
+      restartPolicy: Always
