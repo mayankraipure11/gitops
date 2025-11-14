@@ -143,8 +143,6 @@ Replace `YOUR_MESSAGE_HERE` with the desired string.
 
 # Further Improvements 
 
-# Further Improvements 
-
 - **Readiness Check**: Although readiness and liveness APIs have been created, there are issues implementing them within Kubernetes as the API is not reachable. Status: In Progress.
 
 - **Helm Deployment**: The Helm chart creation and configuration are complete. Currently, there is an issue with the app-message-two Helm chart that I am fixing. Status: In Progress.
