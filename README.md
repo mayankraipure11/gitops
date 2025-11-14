@@ -147,6 +147,8 @@ Replace `YOUR_MESSAGE_HERE` with the desired string.
 
 - **Helm Deployment**: The Helm chart creation and configuration are complete. Currently, there is an issue with the app-message-two Helm chart that I am fixing. Status: In Progress.
 
+- **GitOps for Deployment (Flux)**: Dploy the application via Flux GitOps practices in kind cluster.
+
 - **Ingress Resources**: Services are currently exposed via port forwarding; this can be achieved using ingress resources.
 
 - **Terraform**: Cluster creation is currently done using the `kind create` command. I am working on creating the cluster using Terraform.
