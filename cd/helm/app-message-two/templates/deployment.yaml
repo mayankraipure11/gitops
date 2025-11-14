@@ -32,9 +32,22 @@ spec:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - name: {{ .Chart.Name }}
-          envFrom:
-          - configMapRef:
-              name: {{ include "app-message-two.fullname" . }}-configmap
+          env:
+            - name: BASE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ include "app-message-two.fullname" . }}-configmap
+                  key: baseUrl
+            - name: PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ include "app-message-two.fullname" . }}-configmap
+                  key: port
+            - name: PROTOCOL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ include "app-message-two.fullname" . }}-configmap
+                  key: protocol
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"

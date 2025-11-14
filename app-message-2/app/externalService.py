@@ -12,6 +12,9 @@ def createUrlFromEnv():
             print("full url:::> ",full_url)
             return full_url
     except Exception as e:
+        print("Missing protocol:::> ",protocol)
+        print("base url:::> ",base_url)
+        print("port:::> ",port)
         return str(e)  
     
 def callHttpRequest(url: str):
