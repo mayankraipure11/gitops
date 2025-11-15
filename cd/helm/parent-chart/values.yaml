@@ -1,0 +1,18 @@
+# values.yaml in the parent chart
+global:
+  environment: "production"
+
+child-chart-one: # This key matches the name in the Chart.yaml dependencies list
+  replicaCount: 1
+  repository: mayankraipure/app-message-one
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "1.0.0"
+
+child-chart-two: # This key matches the name in the Chart.yaml dependencies list
+  replicaCount: 1
+  repository: mayankraipure/app-message-two
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "1.0.1"
+  
