@@ -4,8 +4,10 @@ echo "=========Building and Pushing App Message One Docker Image app-message-two
 
 cd ./app-message-2
 
-docker build -t app-message-two:latest . --no-cache
+APP_VERSION=$(grep "__version__" version.py | cut -d '"' -f 2)
 
-docker tag app-message-two:latest mayankraipure/app-message-two:latest
+docker build -t app-message-two:$APP_VERSION . --no-cache
 
-docker push mayankraipure/app-message-two:latest
+docker tag app-message-two:$APP_VERSION mayankraipure/app-message-two:$APP_VERSION
+
+docker push mayankraipure/app-message-two:$APP_VERSION

@@ -5,7 +5,6 @@
 ./ci/app-two.sh
 
 
-
 helm upgrade -i app-message-one cd/helm/app-message-one
 
 helm upgrade -i app-message-two cd/helm/app-message-two
