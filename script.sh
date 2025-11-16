@@ -5,12 +5,15 @@
 ./ci/app-two.sh
 
 
+## Install flux CD CRDs and Controllers in existing kind cluster
+# ./cd/fluxcd/install-flux.sh
 
 helm upgrade -i app-message-one cd/helm/parent-chart
 
 helm upgrade -i app-message-one cd/helm/parent-chart/charts/app-message-one
 
 helm upgrade -i app-message-two cd/helm/parent-chart/charts/app-message-two
+
 # kubectl apply -f ./cd/manifests/
 
 echo "=========Deployed All Manifests Successfully============"

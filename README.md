@@ -149,7 +149,7 @@ This command will:
 
 This approach is a quick solution to check the app is working in dev environment and do not required kubernetes
 
-# prerequsit
+#### prerequsit
 - Docker
 
 If you wish to build and run the application without Kubernetes, you can use the provided `docker-compose.yaml` script to run and build the application locally without a Kubernetes cluster.

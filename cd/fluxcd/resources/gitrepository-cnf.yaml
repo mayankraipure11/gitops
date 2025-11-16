@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: app-message
+  namespace: flux-system
+spec:
+  interval: 1m  # Check for changes every minute
+  url: https://github.com/signavio-hiring/coding-challenge-mayank.git # The repository URL
+  ref:
+    branch: assignment
