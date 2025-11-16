@@ -249,13 +249,15 @@ Replace `YOUR_MESSAGE_HERE` with the desired string.
 
 - **Readiness Check**: Although readiness and liveness APIs have been created, there are issues implementing them within Kubernetes as the API is not reachable. Status: In Progress.
 
-- **GitOps Approach via FluxCD**: Dploy the application via Flux GitOps practices in kind cluster - In Progress
+- **GitOps Approach via FluxCD**: Dploy the application via Flux GitOps practices in kind cluster. - In Progress
 
 - **Ingress Resources**: Services are currently exposed via port forwarding; this can be achieved using ingress resources.
 
 - **Terraform**: Cluster creation is currently done using the `kind create` command. I am working on creating the cluster using Terraform.
 
-- **Github**: Building images and helm chart creation via github action
+- **Github**: Building images and helm chart with github action and publish it to docker registry and artifactoryhub for helm.
+
+For the challange I have use the same repo for code and deployment config, ideally codebase of each service should be present in its own product repository and a saperate configuration repository for configuration and deployment.
 
 # Learning
 
