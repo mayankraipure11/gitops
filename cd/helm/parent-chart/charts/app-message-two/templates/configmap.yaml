@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: {{ include "app-message-two.fullname" . }}-configmap
 data:
-  baseUrl: {{ .Values.cmcfg.baseUrl | quote }}
+  baseUrl: {{ .Values.global.baseUrl | quote }}
   # baseUrl: "app-message-app-message-one"
   port: "8081"
   protocol: "http"

@@ -112,6 +112,3 @@ tolerations: []
 
 affinity: {}
 
-cmcfg:
-  baseUrl: "app-message-one"
-  # baseUrl: "app-message-app-message-one"

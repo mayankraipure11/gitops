@@ -1,6 +1,7 @@
 # values.yaml in the parent chart
 global:
   environment: "production"
+  baseUrl: "app-message-app-message-one"
 
 child-chart-one: # This key matches the name in the Chart.yaml dependencies list
   replicaCount: 1
@@ -15,6 +16,5 @@ child-chart-two: # This key matches the name in the Chart.yaml dependencies list
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "1.0.1"
-  cmcfg:
-    baseUrl: "app-message-app-message-one"
+
   
