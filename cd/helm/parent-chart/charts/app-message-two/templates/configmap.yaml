@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: {{ include "app-message-two.fullname" . }}-configmap
 data:
-  baseUrl: "app-message-one"
+  baseUrl: "app-message-app-message-one"
   port: "8081"
   protocol: "http"

@@ -7,7 +7,7 @@ spec:
   interval: 10m
   chart:
     spec:
-      chart: ../../helm/parent-chart
+      chart: cd/helm/parent-chart
       version: '1.0.0'
       sourceRef:
         kind: GitRepository

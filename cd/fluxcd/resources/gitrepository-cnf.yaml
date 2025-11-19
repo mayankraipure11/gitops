@@ -9,4 +9,4 @@ spec:
   secretRef:
     name: my-git-auth
   ref:
-    branch: assignment
+    branch: main
