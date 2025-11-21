@@ -1,4 +1,4 @@
-kubectl apply -f flux-system.yaml
+kubectl apply -f cd/fluxcd/flux-system.yaml
 
 
 echo "Deployment source-controller waiting for deployment for max 300s."
