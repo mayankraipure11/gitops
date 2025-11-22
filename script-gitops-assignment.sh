@@ -5,8 +5,8 @@
 if [ -z "$GIT_SECRET_PAT" ] || [ -z "$GIT_USERNAME" ]; then
     echo "Error: Both GIT_SECRET_PAT and GIT_USERNAME environment variables must be set."
     # Optionally, specify which one is missing
-    [ -z "$GIT_SECRET_PAT" ] && echo " - GIT_SECRET_PAT is missing or empty."
-    [ -z "$GIT_USERNAME" ] && echo " - GIT_USERNAME is missing or empty."
+    [ -z "$GIT_SECRET_PAT" ] && echo " - GIT_SECRET_PAT is missing or empty. Kindly run export GIT_SECRET_PAT=<your_personal_access_token>"
+    [ -z "$GIT_USERNAME" ] && echo " - GIT_USERNAME is missing or empty.Kindly export GIT_USERNAME=<your_github_username>"
     exit 1
 fi
 
@@ -25,7 +25,7 @@ kubectl create secret generic my-git-auth \
 	          --from-literal=password=$GIT_SECRET_PAT \
           --namespace=flux-system
 
-kubectl apply -f ./cd/fluxcd/resources/gitrepository-cnf.yaml
+kubectl apply -f ./cd/fluxcd/resources/gitrepository-cnf-challange.yaml
 
 sleep 5
 kubectl apply -f ./cd/fluxcd/resources/helrelease-cnf.yaml
